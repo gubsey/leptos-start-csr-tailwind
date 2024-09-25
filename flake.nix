@@ -1,20 +1,19 @@
 {
     description = "A development environment for building EPB-Tools";
 
-    input.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    inputs.nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
     outputs = { self, nixpkgs }:
     let
         supportedSystems = [ "x86_64-linux" ];
-        forEachSupportdSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
-            pkgs = import nixpkgs {};
+        forEachSupportedSystem = f: nixpkgs.lib.genAttrs supportedSystems (system: f {
+            pkgs = import nixpkgs { inherit system; };
         });
     in {
         devShells = forEachSupportedSystem ({ pkgs }: {
             default = pkgs.mkShell {
                 packages = with pkgs; [
                     cargo
-                    cargo-generate
                     trunk
                     lld
                     wasm-bindgen-cli
@@ -26,6 +25,10 @@
                     helix
                     simple-http-server
                 ];
+                shellHook = ''
+                    echo you are in a flake
+                    export PS1=FLAKE\ $PS1
+                '';
             };
         });
     };
