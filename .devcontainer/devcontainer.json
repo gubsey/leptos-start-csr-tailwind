@@ -1,0 +1,21 @@
+{
+    "image": "mcr.microsoft.com/devcontainers/base:alpine",
+    "features": {
+        "ghcr.io/devcontainers/features/nix:1": {
+            "multiUser": true,
+            "version": "latest",
+            "extraNixConfig": "experimental-features = nix-command flakes,keep-outputs = true,keep-derivations = true"
+        }
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "rust-lang.rust-analyzer",
+                "fill-labs.dependi",
+                "tamasfe.even-better-toml",
+                "bbenoist.Nix"
+            ]
+        }
+    },
+    "postCreateCommand": "nix-env -iA nixpkgs.cargo nixpkgs.rust-analyzer"
+}
