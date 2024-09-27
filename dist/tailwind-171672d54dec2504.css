@@ -311,9 +311,9 @@ img,video{
   --tw-contain-style: 
 }
 
-.bg-slate-800{
+.bg-stone-800{
   --tw-bg-opacity:1;
-  background-color:rgb(30 41 59/var(--tw-bg-opacity))
+  background-color:rgb(41 37 36/var(--tw-bg-opacity))
 }
 
 .p-5{
@@ -324,9 +324,9 @@ img,video{
   font-family:Mononoki
 }
 
-.text-red-300{
+.text-stone-300{
   --tw-text-opacity:1;
-  color:rgb(252 165 165/var(--tw-text-opacity))
+  color:rgb(214 211 209/var(--tw-text-opacity))
 }
 
 @font-face{
@@ -335,12 +335,12 @@ img,video{
   src:url(/MononokiNerdFont-Regular.ttf) format("truetype")
 }
 
-.\[\&\>input\]\:bg-slate-600>input{
+.\[\&\>input\]\:bg-stone-600>input{
   --tw-bg-opacity:1;
-  background-color:rgb(71 85 105/var(--tw-bg-opacity))
+  background-color:rgb(87 83 78/var(--tw-bg-opacity))
 }
 
-.\[\&\>input\]\:text-slate-200>input{
+.\[\&\>input\]\:text-stone-200>input{
   --tw-text-opacity:1;
-  color:rgb(226 232 240/var(--tw-text-opacity))
+  color:rgb(231 229 228/var(--tw-text-opacity))
 }

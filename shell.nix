@@ -6,22 +6,22 @@ pkgs.stdenv.mkDerivation {
   system = "x86_64-linux";
   buildInputs = with pkgs; [
     cargo
-    cargo-generate
     trunk
     lld
     wasm-bindgen-cli
     tailwindcss
-
-    # shell only
-    rust-analyzer
-    nil
-    helix
-    simple-http-server
+    tmux
+    cacert
+    git
   ];
 
   shellHook = ''
-    cargo --version
-    trunk --version
-    tailwindcss -h | grep tailwindcss\ v --color=never
+    export NIX_ENFORCE_PURITY=0 # needed for ld to link properly
+    tmux \
+      new-session -s nix_shell "trunk serve" \;\
+      split-window -h "tailwindcss -i input.css -o style/tailwind.css -wm" \;\
+      set-option remain-on-exit on
+    tmux kill-session -t nix_shell
+    exit
   '';
 }
