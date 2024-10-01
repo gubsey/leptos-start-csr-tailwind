@@ -311,22 +311,22 @@ img,video{
   --tw-contain-style: 
 }
 
-.bg-stone-800{
+.bg-zinc-800{
   --tw-bg-opacity:1;
-  background-color:rgb(41 37 36/var(--tw-bg-opacity))
+  background-color:rgb(39 39 42/var(--tw-bg-opacity))
 }
 
 .p-5{
   padding:1.25rem
 }
 
-.font-\[\"Mononoki\"\]{
-  font-family:Mononoki
+.font-mono{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace
 }
 
-.text-stone-300{
+.text-zinc-300{
   --tw-text-opacity:1;
-  color:rgb(214 211 209/var(--tw-text-opacity))
+  color:rgb(212 212 216/var(--tw-text-opacity))
 }
 
 @font-face{
@@ -335,12 +335,12 @@ img,video{
   src:url(/MononokiNerdFont-Regular.ttf) format("truetype")
 }
 
-.\[\&\>input\]\:bg-stone-600>input{
+.\[\&\>input\]\:bg-zinc-600>input{
   --tw-bg-opacity:1;
-  background-color:rgb(87 83 78/var(--tw-bg-opacity))
+  background-color:rgb(82 82 91/var(--tw-bg-opacity))
 }
 
-.\[\&\>input\]\:text-stone-200>input{
+.\[\&\>input\]\:text-zinc-200>input{
   --tw-text-opacity:1;
-  color:rgb(231 229 228/var(--tw-text-opacity))
+  color:rgb(228 228 231/var(--tw-text-opacity))
 }

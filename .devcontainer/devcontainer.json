@@ -17,5 +17,5 @@
             ]
         }
     },
-    "postCreateCommand": "rustup target add wasm32-unknown-unknown"
+    "postCreateCommand": "rustup default $(nix-shell --pure -p rustc --run 'rustc -V | awk \"{print \\$2}\"')"
 }
